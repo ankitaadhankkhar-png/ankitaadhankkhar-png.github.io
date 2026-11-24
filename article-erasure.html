@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can an AI model forget you? | Ankitaa Dhankkhar</title>
+<meta name="description" content="The right to erasure after AI training: what the law says and a workable answer.">
+<meta property="og:title" content="Can an AI model forget you? | Ankitaa Dhankkhar">
+<meta property="og:description" content="The right to erasure after AI training: what the law says and a workable answer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3C9 3 4 9 4 16s5 13 12 13c0-8 4-14 12-17C25 6 21 3 16 3z' fill='%233D8B6E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="dot" aria-hidden="true"></span>Ankitaa Dhankkhar</a>
+    <nav aria-label="Main"><a href="index.html" data-de="Start">Home</a><a href="about.html" data-de="Über mich">About</a><a href="writing.html" data-de="Artikel">Writing</a><a href="newsletter.html" data-de="Newsletter">Newsletter</a><a href="contact.html" data-de="Kontakt">Contact</a><button class="lang" id="lang" type="button">Deutsch</button></nav>
+  </div>
+</header>
+<main>
+
+<section class="sec">
+  <div class="wrap">
+    <article class="article">
+      <p class="tip" data-de="Dieser Artikel ist nur auf Englisch verfügbar.">This article is in English.</p>
+      <h1>Can an AI model forget you? The right to erasure after training</h1>
+      <p class="by">Ankitaa Dhankkhar · November 2026</p>
+      <p class="dek">Article 17 of the GDPR lets people ask for their personal data to be erased. That is simple for a row in a database. It is much harder when the data has already shaped a trained AI model.</p>
+
+      <h2>The right, as written</h2>
+      <p>The right to erasure applies in defined situations: the data is no longer needed, consent is withdrawn, the person successfully objects, or the processing was unlawful. When it applies, the controller must erase without undue delay and, where the data has been made public, take reasonable steps to tell others who are processing it. The right was designed with storage in mind: find the record, delete it, confirm.</p>
+
+      <h2>Is a trained model personal data?</h2>
+      <p>The first question is whether the model itself holds personal data at all. In its Opinion 28/2024, the European Data Protection Board took a cautious line. It said that AI models trained on personal data cannot, in all cases, be treated as anonymous, and that supervisory authorities should assess anonymity case by case. A model would only count as anonymous if it is very unlikely that personal data from training can be extracted from it, either directly or through queries.</p>
+      <p>That matters for erasure. If a model is not anonymous, an erasure request does not stop at the training dataset. It can reach the model itself.</p>
+
+      <h2>The technical gap</h2>
+      <p>Here law and engineering pull apart. Removing one person's influence from a large model is not like deleting a file. Retraining from scratch is expensive, and "machine unlearning" methods are still maturing. What developers can do quickly is filter outputs so the model stops producing information about a person. But suppressing an output is not the same as erasing data, and the GDPR speaks of erasure.</p>
+
+      <h2>A moving legal landscape</h2>
+      <p>The rules around this question are also changing. The Digital Omnibus on AI, which amends the AI Act, entered into force in July 2026. The parallel Digital Omnibus on the GDPR is still being negotiated. The Commission had proposed narrowing the definition of personal data so that identifiability depends on the means a particular entity has, which could have taken many models outside the GDPR. In its October 2026 negotiating position, the Council rejected that change and kept the existing definition. For now, the EDPB's case-by-case approach remains the reference point.</p>
+
+      <h2>A workable reading</h2>
+      <p>Rather than treating erasure as all-or-nothing, a practical interpretation would treat it as a set of obligations scaled to what is technically possible:</p>
+      <ol>
+        <li><strong>Erase at the source.</strong> Remove the person's data from training corpora and exclude it from every future training run.</li>
+        <li><strong>Suppress promptly.</strong> Use output filtering as an interim measure, while being honest that it is suppression, not erasure.</li>
+        <li><strong>Document the decision.</strong> Record the request, the steps taken and why further steps were or were not feasible, as the GDPR's accountability principle requires.</li>
+        <li><strong>Plan for retraining.</strong> Make sure the data is gone when the model is next retrained or replaced, so suppression is never permanent.</li>
+      </ol>
+      <p>This does not fully solve the problem, but it respects the purpose of Article 17 without demanding the technically impossible.</p>
+
+      <p class="src">Sources: <a href="https://www.edpb.europa.eu/news/edpb-opinion-on-ai-models-gdpr-principles-support-responsible-ai_en">EDPB, Opinion 28/2024 on AI models</a> · <a href="https://iapp.org/news/a/rewriting-the-rules-of-ai-targeted-eu-ai-act-amendments-in-the-digital-omnibus-on-ai">IAPP, the Digital Omnibus on AI</a> · <a href="https://iapp.org/news/a/eu-member-states-finalize-digital-omnibus-negotiating-stance">IAPP, the Council's Digital Omnibus position</a></p>
+      <p style="margin-top:24px"><a class="btn" href="writing.html" data-de="← Alle Artikel">← All writing</a></p>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ankitaa Dhankkhar</span>
+    <span><a href="https://www.linkedin.com/in/ankitaa-dhankkhar">LinkedIn</a> · <a href="contact.html" data-de="Kontakt">Contact</a></span>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
