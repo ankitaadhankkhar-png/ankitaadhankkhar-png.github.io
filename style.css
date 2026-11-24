@@ -1,10 +1,10 @@
-/* VOICE  warm, human, quietly witty; a lawyer who still thinks like a designer
-   IDEA   a well-kept garden notebook: soft paper green ground, deep evergreen ink, sky-blue light
-   PICTURE the scales of justice (padlock vs AI chip) drawn in the garden palette, with leaf shapes
-   COLOUR ground #F6FAF4, ink #1B3A2F, leaf green #3D8B6E, sky #A9D3F5, deep sky #2F6EA5
-   TYPE   Newsreader (serif, human) for headings, Inter for text
+/* VOICE  warm but formal; a lawyer who still thinks like a designer
+   IDEA   a clean legal brief with a touch of life: blue-white ground, navy ink, a hint of green
+   PICTURE the scales of justice (padlock vs AI chip) in blue with green accents
+   COLOUR ground #F4F8FC, ink #14284B, blue #1F5F99, soft green #CDE7DC, green #2E8B6A
+   TYPE   Source Serif 4 for headings, Inter for text
    LAYOUT multi-page; each page opens with a short serif title band, content in 1080px */
-:root{--bg:#F6FAF4;--paper:#FFFFFF;--ink:#1B3A2F;--soft:#4A6358;--line:#DCE8DF;--leaf:#3D8B6E;--leaf-d:#2C6B53;--sky:#A9D3F5;--sky-d:#2F6EA5;--mint:#E3F1E8;--skyw:#EAF4FD}
+:root{--bg:#F4F8FC;--paper:#FFFFFF;--ink:#14284B;--soft:#4A5A75;--line:#DCE5F0;--leaf:#1F5F99;--leaf-d:#164A79;--sky:#CDE7DC;--sky-d:#1F5F99;--mint:#E6EEF8;--skyw:#E8F4EE;--green:#2E8B6A}
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
@@ -14,7 +14,7 @@ a{color:var(--sky-d);text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{color:var(--leaf-d)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--sky-d);outline-offset:3px;border-radius:4px}
 .wrap{max-width:1080px;margin:0 auto;padding-inline:max(5vw,18px)}
-h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:600;letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
 h1{font-size:clamp(36px,5.2vw,58px);line-height:1.05;margin:0 0 18px}
 h2{font-size:clamp(27px,3.2vw,36px);line-height:1.12;margin:0 0 16px}
 h3{font-size:21px;line-height:1.25;margin:0 0 8px}
@@ -22,10 +22,10 @@ p{margin:0 0 14px}
 .lead{font-size:19px;color:var(--soft);max-width:60ch}
 
 /* header */
-.top{position:sticky;top:0;z-index:10;background:rgba(246,250,244,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:10;background:rgba(244,248,252,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
 .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 20px;min-height:64px}
-.brand{font:600 20px/1 Newsreader,Georgia,serif;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
-.brand .dot{width:12px;height:12px;border-radius:50% 50% 50% 0;background:var(--leaf);transform:rotate(-45deg)}
+.brand{font:600 20px/1 "Source Serif 4",Georgia,serif;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand .dot{width:12px;height:12px;border-radius:50% 50% 50% 0;background:var(--green);transform:rotate(-45deg)}
 nav{display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px}
 nav a{color:var(--soft);text-decoration:none;font-size:15px;padding:10px 10px;border-radius:999px}
 nav a:hover{color:var(--ink);background:var(--mint)}
@@ -43,14 +43,14 @@ nav a[aria-current=page]{color:var(--leaf-d);background:var(--mint);font-weight:
 /* hero */
 .hero{padding:clamp(40px,6vw,84px) 0 clamp(36px,5vw,64px);position:relative;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
-.hello{display:inline-flex;align-items:center;gap:8px;background:var(--skyw);color:var(--sky-d);font-weight:600;font-size:14px;padding:6px 14px;border-radius:999px;margin-bottom:18px}
-.hello::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--leaf)}
+.hello{display:inline-flex;align-items:center;gap:8px;background:var(--skyw);color:#1E6B50;font-weight:600;font-size:14px;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.hello::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
 .portrait{position:relative;justify-self:center;width:min(360px,80vw);aspect-ratio:1}
-.portrait .blob{position:absolute;inset:0;border-radius:46% 54% 52% 48% / 52% 44% 56% 48%;background:var(--sky);transform:rotate(-8deg)}
-.portrait .blob2{position:absolute;inset:6% -4% -4% 10%;border-radius:55% 45% 48% 52% / 46% 56% 44% 54%;background:var(--mint)}
-.portrait .ph{position:absolute;inset:8%;border-radius:50%;overflow:hidden;background:var(--leaf);border:6px solid var(--paper);box-shadow:0 18px 40px -20px rgba(27,58,47,.45);display:flex;align-items:center;justify-content:center;color:#fff;font:600 64px Newsreader,serif}
+.portrait .blob{position:absolute;inset:0;border-radius:46% 54% 52% 48% / 52% 44% 56% 48%;background:#BFD6EE;transform:rotate(-8deg)}
+.portrait .blob2{position:absolute;inset:6% -4% -4% 10%;border-radius:55% 45% 48% 52% / 46% 56% 44% 54%;background:var(--sky)}
+.portrait .ph{position:absolute;inset:8%;border-radius:50%;overflow:hidden;background:var(--leaf);border:6px solid var(--paper);box-shadow:0 18px 40px -20px rgba(20,40,75,.45);display:flex;align-items:center;justify-content:center;color:#fff;font:600 64px "Source Serif 4",Georgia,serif}
 .portrait .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.leaf{position:absolute;width:38px;height:38px;border-radius:0 60% 0 60%;background:var(--leaf);opacity:.85}
+.leaf{position:absolute;width:38px;height:38px;border-radius:0 60% 0 60%;background:var(--green);opacity:.85}
 .portrait .l1{top:4%;right:2%;transform:rotate(18deg)}
 .portrait .l2{bottom:6%;left:-2%;width:28px;height:28px;background:var(--sky-d);opacity:.75;transform:rotate(-30deg)}
 
@@ -60,7 +60,7 @@ nav a[aria-current=page]{color:var(--leaf-d);background:var(--mint);font-weight:
 .kicker{font-weight:600;font-size:14px;color:var(--leaf-d);margin-bottom:8px}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;position:relative;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(27,58,47,.5)}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(20,40,75,.45)}
 .card p{color:var(--soft);margin:0}
 .icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .icon.g{background:var(--mint)}.icon.b{background:var(--skyw)}
@@ -74,27 +74,27 @@ nav a[aria-current=page]{color:var(--leaf-d);background:var(--mint);font-weight:
 @keyframes tip{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
 
 /* explainer */
-.quiz{background:var(--ink);color:#F1F7F3;border-radius:24px;padding:clamp(22px,3vw,34px);min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
-.quiz .step{font-size:13px;color:#A9C7B8;margin-bottom:6px}
-.quiz .q{font:600 23px/1.3 Newsreader,Georgia,serif;margin:0 0 18px;color:#fff}
+.quiz{background:var(--ink);color:#F1F5FA;border-radius:24px;padding:clamp(22px,3vw,34px);min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.quiz .step{font-size:13px;color:#A9BFDB;margin-bottom:6px}
+.quiz .q{font:600 23px/1.3 "Source Serif 4",Georgia,serif;margin:0 0 18px;color:#fff}
 .quiz .opts{display:flex;flex-wrap:wrap;gap:10px}
-.quiz .opt{min-height:46px;padding:0 24px;border-radius:999px;border:1.5px solid var(--sky);background:transparent;color:#fff;font:600 15px Inter,sans-serif;cursor:pointer}
-.quiz .opt:hover{background:var(--sky);color:var(--ink)}
-.quiz .res h3{color:var(--sky);font-size:23px}
-.quiz .res p{color:#DCEBE2;margin:0}
-.quiz .again{align-self:flex-start;background:transparent;border:1px solid #5d7d6f;color:#DCEBE2;border-radius:999px;padding:8px 16px;font:500 14px Inter,sans-serif;cursor:pointer;min-height:40px}
+.quiz .opt{min-height:46px;padding:0 24px;border-radius:999px;border:1.5px solid #9DD3BE;background:transparent;color:#fff;font:600 15px Inter,sans-serif;cursor:pointer}
+.quiz .opt:hover{background:#9DD3BE;color:var(--ink)}
+.quiz .res h3{color:#9DD3BE;font-size:23px}
+.quiz .res p{color:#DDE6F2;margin:0}
+.quiz .again{align-self:flex-start;background:transparent;border:1px solid #5d7393;color:#DDE6F2;border-radius:999px;padding:8px 16px;font:500 14px Inter,sans-serif;cursor:pointer;min-height:40px}
 .note{font-size:14px;color:var(--soft)}
 
 /* writing list */
 .post{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:baseline;padding:26px 28px;border-radius:22px;background:var(--paper);border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s}
-.post:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(27,58,47,.5);color:var(--ink)}
+.post:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(20,40,75,.45);color:var(--ink)}
 .post h3{font-size:25px;margin:0}
 .post .meta{font-size:14px;color:var(--soft);white-space:nowrap}
 .post p{grid-column:1/-1;margin:0;color:var(--soft)}
 .post .go{grid-column:1/-1;color:var(--leaf-d);font-weight:600;font-size:15px}
 
 /* article */
-.article{max-width:70ch;margin:0 auto;font:19px/1.75 Newsreader,Georgia,serif}
+.article{max-width:70ch;margin:0 auto;font:19px/1.75 "Source Serif 4",Georgia,serif}
 .article h1{font-size:clamp(34px,4.6vw,50px)}
 .article h2{font-size:26px;margin:38px 0 10px}
 .article .by{font:15px/1.4 Inter,sans-serif;color:var(--soft);margin-bottom:26px}
@@ -118,7 +118,7 @@ nav a[aria-current=page]{color:var(--leaf-d);background:var(--mint);font-weight:
 .tl p{margin:0;color:var(--soft);font-size:16px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 .chip{background:var(--mint);color:var(--leaf-d);font-size:14px;font-weight:500;padding:6px 12px;border-radius:999px}
-.chip.b{background:var(--skyw);color:var(--sky-d)}
+.chip.b{background:var(--skyw);color:#1E6B50}
 .certs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .certs li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .certs li:last-child{border-bottom:0}
@@ -128,7 +128,7 @@ nav a[aria-current=page]{color:var(--leaf-d);background:var(--mint);font-weight:
 .nl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
 .issue{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--leaf);border-radius:0 16px 16px 0;padding:16px 20px;margin-bottom:12px}
 .issue span{display:block;font-size:13px;color:var(--soft);margin-bottom:2px}
-.issue b{font:600 19px/1.35 Newsreader,Georgia,serif}
+.issue b{font:600 19px/1.35 "Source Serif 4",Georgia,serif}
 .recipe{counter-reset:s;list-style:none;padding:0;margin:0}
 .recipe li{counter-increment:s;position:relative;padding:0 0 16px 48px}
 .recipe li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--sky);color:var(--ink);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
@@ -141,7 +141,7 @@ nav a[aria-current=page]{color:var(--leaf-d);background:var(--mint);font-weight:
 /* closing band */
 .cta{background:var(--leaf);color:#fff;border-radius:28px;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
 .cta h2{color:#fff;margin:0 0 6px}
-.cta p{margin:0;color:#E3F1E8}
+.cta p{margin:0;color:#E6EEF8}
 .cta .btn{border-color:#fff;color:#fff}
 .cta .btn.solid{background:#fff;color:var(--leaf-d)}
 
@@ -158,3 +158,5 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .post{grid-template-columns:minmax(0,1fr)}
   .article{font-size:18px}
 }
+.prose{max-width:68ch}
+.prose p{font-size:18px}
