@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankitaa Dhankkhar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE  quiet, formal, a young lawyer's own journal
+   IDEA   a law-review issue: masthead, contents, one lead article, author note
+   PICTURE the scales of justice weighing a padlock (privacy) against an AI chip, over circuit traces
+   COLOUR white / deep navy ink, slate support, a thin brass accent; night = navy ground, ivory ink
+   TYPE   Source Serif 4 for headings and article body, Inter for UI
+   LAYOUT masthead + nav; title across the top with the picture beneath; sections as ruled bands; phone stacks */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0f1b2d);--ink:light-dark(#14213a,#eef1f5);--soft:light-dark(#4a5870,#b4c0d2);--rule:light-dark(#d9dee7,#2a3a55);--panel:light-dark(#f3f5f9,#15243b);--brass:light-dark(#9a7330,#d6b26a);--teal:light-dark(#2f7d86,#8ccdd4);--hero:light-dark(#14213a,#0b1524)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit;text-decoration-color:var(--brass);text-underline-offset:3px}
+a:hover{color:var(--brass)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:max(5vw,16px)}
+.band{padding-block:clamp(36px,5vw,72px);border-top:1px solid var(--rule)}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--rule)}
+.mast{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;min-height:60px}
+.mast .name{font:600 19px/1.2 "Source Serif 4",Georgia,serif;text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:14px}
+nav a{text-decoration:none;padding:10px 0;color:var(--soft)}
+nav a:hover{color:var(--ink)}
+.lead{padding-top:clamp(32px,5vw,64px)}
+h1{font:600 clamp(34px,5vw,52px)/1.05 "Source Serif 4",Georgia,serif;letter-spacing:-.02em;margin:0 0 14px;max-width:18ch;text-wrap:balance}
+.intro{font-size:18px;color:var(--soft);max-width:62ch;margin:0}
+.intro strong{color:var(--ink);font-weight:600}
+.hero{margin-top:clamp(24px,4vw,40px);background:var(--hero);color:#eef1f5;position:relative;min-height:300px}
+.hero svg{display:block;width:100%;height:clamp(240px,30vw,360px)}
+.hero .cap{position:absolute;left:max(5vw,16px);bottom:18px;font-size:13px;color:#b4c0d2}
+h2{font:600 clamp(26px,3.2vw,34px)/1.1 "Source Serif 4",Georgia,serif;letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance}
+h3{font:600 20px/1.25 "Source Serif 4",Georgia,serif;margin:0 0 8px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.cols p{margin:0;color:var(--soft)}
+.focus .k{font-size:13px;font-weight:600;color:var(--brass);margin-bottom:6px}
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.two p{margin:0 0 14px}
+.facts{background:var(--panel);padding:22px 24px;border-left:2px solid var(--brass)}
+.facts dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 18px;font-size:15px}
+.facts dt{color:var(--soft);white-space:nowrap}
+.facts dd{margin:0}
+.toc{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.toc h3{font-size:24px}
+.toc p{grid-column:1/-1;margin:0;color:var(--soft);max-width:70ch}
+.toc .meta{font-size:14px;color:var(--soft);white-space:nowrap}
+article{max-width:68ch;margin:0 auto;font:18px/1.7 "Source Serif 4",Georgia,serif}
+article h2{margin-top:0}
+article h3{font-size:22px;margin:34px 0 10px}
+article p{margin:0 0 18px}
+article .dek{font:19px/1.55 "Source Serif 4",Georgia,serif;color:var(--soft);margin-bottom:26px}
+article .by{font:14px/1.4 Inter,system-ui,sans-serif;color:var(--soft);margin:-8px 0 24px}
+article ol{padding-left:1.3em}
+article li{margin-bottom:8px}
+article .src{font:14px/1.6 Inter,system-ui,sans-serif;color:var(--soft);border-top:1px solid var(--rule);padding-top:16px;margin-top:30px}
+article .src a{overflow-wrap:anywhere}
+.rows{display:grid;gap:0}
+.row{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:8px 28px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.row:first-child{border-top:1px solid var(--rule)}
+.row .when{color:var(--soft);font-size:15px}
+.row h3{font-size:19px;margin:0 0 4px}
+.row p{margin:0;color:var(--soft)}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end}
+.contact p{margin:0;color:var(--soft);max-width:56ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--ink);font-weight:500;font-size:15px;text-decoration:none;background:transparent;color:var(--ink);cursor:pointer;font-family:inherit}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--brass);border-color:var(--brass);color:#fff}
+.addr{font-size:15px;color:var(--soft);margin-top:10px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.sub{color:var(--soft);margin:-6px 0 22px;max-width:62ch}
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pillar{padding:24px;background:var(--panel);border-top:3px solid var(--teal)}
+.pillar:nth-child(2){border-top-color:var(--brass)}
+.pillar p{margin:0;color:var(--soft)}
+.k{font-size:13px;font-weight:600;color:var(--brass);margin-bottom:6px}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.proj{border:1px solid var(--rule);padding:22px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:var(--brass);transform:translateY(-2px)}
+.proj h3{margin:0}
+.proj p{margin:0;color:var(--soft);flex:1}
+.st{align-self:flex-start;font-size:13px;font-weight:600;padding:4px 10px;background:var(--panel);color:var(--soft)}
+.st.now{background:var(--teal);color:#fff}
+.tags{font-size:13px;color:var(--soft)}
+.note{font-size:14px;color:var(--soft)}
+.quiz{background:var(--hero);color:#eef1f5;padding:26px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.quiz .q{font:600 21px/1.3 "Source Serif 4",Georgia,serif;margin:0 0 16px}
+.quiz .step{font-size:13px;color:#b4c0d2;margin-bottom:8px}
+.quiz .opts{display:flex;flex-wrap:wrap;gap:10px}
+.quiz .opt{min-height:44px;padding:0 20px;border:1px solid #d6b26a;background:transparent;color:#eef1f5;font:500 15px Inter,system-ui,sans-serif;cursor:pointer}
+.quiz .opt:hover{background:#d6b26a;color:#0f1b2d}
+.quiz .res h3{color:#d6b26a;font-size:21px}
+.quiz .res p{margin:0;color:#dfe5ee}
+.quiz .qnav .btn{border-color:#b4c0d2;color:#eef1f5}
+.news{background:var(--panel)}
+.newsgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.newsgrid p{color:var(--soft);margin:0}
+.issues{display:grid;gap:10px}
+.iss{background:var(--bg);padding:14px 16px;border-left:2px solid var(--brass);font:600 17px/1.35 "Source Serif 4",Georgia,serif}
+.iss span{display:block;font:500 13px Inter,system-ui,sans-serif;color:var(--soft);margin-bottom:2px}
+.issues .btn{justify-self:start;margin-top:6px}
+#beam{transform-origin:600px 85px;animation:tip 6s ease-in-out infinite}
+@keyframes tip{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+@media (prefers-reduced-motion:reduce){#beam{animation:none}.proj{transition:none}}
+footer{border-top:1px solid var(--rule);padding-block:22px;font-size:14px;color:var(--soft)}
+@media (max-width:900px){.cols,.two,.pillars,.newsgrid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){.projects{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.row{grid-template-columns:minmax(0,1fr)}.contact{grid-template-columns:minmax(0,1fr)}nav{gap:0 14px}.hero .cap{display:none}article{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap mast">
+    <a class="name" href="#top">Ankitaa Dhankkhar</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#explainer">Explainer</a>
+      <a href="#writing">Writing</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap lead">
+    <h1>Data protection and AI governance</h1>
+    <p class="intro">Qualified lawyer and <strong>Erasmus Mundus data law student</strong> at TU Dresden and TalTech, focused on <strong>GDPR compliance</strong> and the <strong>EU AI Act</strong>. I build practical compliance work in public and write a newsletter on what new rules mean in practice.</p>
+    <div class="cta"><a class="btn solid" href="#work">See my work</a><a class="btn" href="#newsletter">Read the newsletter</a></div>
+  </section>
+
+  <div class="hero" role="img" aria-label="Scales of justice balancing a padlock against an AI chip, over circuit lines">
+    <svg id="scene" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+    <div class="cap">Privacy on one side, AI on the other: the balance this work is about.</div>
+  </div>
+
+  <section class="band" id="about">
+    <div class="wrap two">
+      <div>
+        <h2>From the courtroom to the code</h2>
+        <p>I spent nearly three years in legal practice in Chandigarh, in the office of a Senior Advocate and former Additional Advocate General of Haryana. I advised more than 240 clients across civil and criminal matters, drafted and reviewed a very large volume of legal documents, and negotiated settlements. I also worked as a Law Researcher in the chambers of Justice Rajbir Sehrawat of the Punjab and Haryana High Court.</p>
+        <p>My interest in privacy started with my LLM dissertation on the right to privacy in the Big Data era, including the right to erasure. I am now building on it in Europe, where data protection law and AI regulation are being written and rewritten in real time.</p>
+      </div>
+      <aside class="facts" aria-label="At a glance">
+        <dl>
+          <dt>Studying</dt><dd>Erasmus Mundus MIPDaL, data law track: TU Dresden and TalTech</dd>
+          <dt>Qualified</dt><dd>Advocate, enrolled in India (2019)</dd>
+          <dt>Preparing</dt><dd>IAPP CIPP/E</dd>
+          <dt>Languages</dt><dd>English (C1), Hindi (native), German (learning)</dd>
+          <dt>Based in</dt><dd>Tallinn, Estonia</dd>
+          <dt>Open to</dt><dd>Privacy and data protection internships and traineeships; AI governance fellowships</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band" id="focus">
+    <div class="wrap">
+      <h2>Two things I work on</h2>
+      <div class="pillars">
+        <div class="pillar"><div class="k">Pillar 1</div><h3>Data protection in practice</h3><p>GDPR compliance as privacy teams actually do it: impact assessments (DPIAs), records of processing, data subject requests and clear privacy notices.</p></div>
+        <div class="pillar"><div class="k">Pillar 2</div><h3>AI governance</h3><p>What the EU AI Act asks of organisations that build or buy AI, and where it meets the GDPR, especially around training data.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="work">
+    <div class="wrap">
+      <h2>Proof of work</h2>
+      <p class="sub">Independent projects modelled on the tasks privacy teams do every day. Each one is published here when finished.</p>
+      <div class="projects">
+        <div class="proj"><span class="st now">In progress</span><h3>DPIA of an AI recruitment tool</h3><p>A full data protection impact assessment for a fictional Tallinn company buying an AI tool that screens CVs, with an EU AI Act high-risk check.</p><div class="tags">DPIA · AI Act · Recruitment</div></div>
+        <div class="proj"><span class="st">Next · Jan 2027</span><h3>Privacy notice audit</h3><p>A 10-point transparency scorecard of a popular app's privacy notice against GDPR Articles 13 and 14, with a suggested rewrite.</p><div class="tags">Transparency · GDPR</div></div>
+        <div class="proj"><span class="st">Feb 2027</span><h3>Records of processing and request playbook</h3><p>A records-of-processing register and a one-month workflow for access requests, built for a fictional 25-person startup.</p><div class="tags">RoPA · Data subject rights</div></div>
+        <div class="proj"><span class="st">Feb 2027</span><h3>Policy brief: the GDPR Digital Omnibus and AI training</h3><p>Two pages on what the proposed GDPR changes mean for training AI models, and where negotiations stand.</p><div class="tags">Policy · GDPR · AI</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="explainer">
+    <div class="wrap two">
+      <div>
+        <h2>Can an AI model forget you?</h2>
+        <p>A quick walk-through of how an erasure request might apply to a trained AI model, based on the reasoning in my article below. Answer three questions.</p>
+        <p class="note">An illustration of the reasoning, not legal advice.</p>
+      </div>
+      <div class="quiz" aria-live="polite">
+        <div id="qbox"></div>
+        <div class="qnav"><button class="btn" id="qreset" type="button">Start again</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="writing">
+    <div class="wrap">
+      <h2>Writing</h2>
+      <a class="toc" href="#erasure">
+        <h3>Can an AI model forget you?</h3>
+        <span class="meta">November 2026 · 6 min read</span>
+        <p>The right to erasure was built for databases. What does it mean once your data has shaped a trained model, and what is a workable answer for developers and regulators?</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="band" id="erasure">
+    <article>
+      <h2>Can an AI model forget you? The right to erasure after training</h2>
+      <p class="by">Ankitaa Dhankkhar · November 2026</p>
+      <p class="dek">Article 17 of the GDPR lets people ask for their personal data to be erased. That is simple for a row in a database. It is much harder when the data has already shaped the parameters of a trained AI model.</p>
+
+      <h3>The right, as written</h3>
+      <p>The right to erasure applies in defined situations: the data is no longer needed, consent is withdrawn, the person successfully objects, or the processing was unlawful. When it applies, the controller must erase without undue delay and, where the data has been made public, take reasonable steps to tell others who are processing it. The right was designed with storage in mind: find the record, delete it, confirm.</p>
+
+      <h3>Is a trained model personal data?</h3>
+      <p>The first question is whether the model itself holds personal data at all. In its Opinion 28/2024, the European Data Protection Board took a cautious line. It said that AI models trained on personal data cannot, in all cases, be treated as anonymous, and that supervisory authorities should assess anonymity case by case. A model would only count as anonymous if it is very unlikely that personal data from training can be extracted from it, either directly or through queries.</p>
+      <p>That matters for erasure. If a model is not anonymous, an erasure request does not stop at the training dataset. It can reach the model itself.</p>
+
+      <h3>The technical gap</h3>
+      <p>Here law and engineering pull apart. Removing one person's influence from a large model is not like deleting a file. Retraining from scratch is expensive, and "machine unlearning" methods are still maturing. What developers can do quickly is filter outputs so the model stops producing information about a person. But suppressing an output is not the same as erasing data, and the GDPR speaks of erasure.</p>
+
+      <h3>A moving legal landscape</h3>
+      <p>The rules around this question are also changing. The Digital Omnibus on AI, which amends the AI Act, entered into force in July 2026. The parallel Digital Omnibus on the GDPR is still being negotiated. The Commission had proposed narrowing the definition of personal data so that identifiability depends on the means a particular entity has, which could have taken many models outside the GDPR. In its October 2026 negotiating position, the Council rejected that change and kept the existing definition. For now, the EDPB's case-by-case approach remains the reference point.</p>
+
+      <h3>A workable reading</h3>
+      <p>Rather than treating erasure as all-or-nothing, a practical interpretation would treat it as a set of obligations scaled to what is technically possible:</p>
+      <ol>
+        <li><strong>Erase at the source.</strong> Remove the person's data from training corpora and exclude it from every future training run.</li>
+        <li><strong>Suppress promptly.</strong> Use output filtering as an interim measure, while being honest that it is suppression, not erasure.</li>
+        <li><strong>Document the decision.</strong> Record the request, the steps taken and why further steps were or were not feasible, as the GDPR's accountability principle requires.</li>
+        <li><strong>Plan for retraining.</strong> Make sure the data is gone when the model is next retrained or replaced, so suppression is never permanent.</li>
+      </ol>
+      <p>This does not fully solve the problem, but it respects the purpose of Article 17 without demanding the technically impossible.</p>
+
+      <p class="src">Sources: <a href="https://www.edpb.europa.eu/news/edpb-opinion-on-ai-models-gdpr-principles-support-responsible-ai_en">EDPB, Opinion 28/2024 on AI models</a> · <a href="https://iapp.org/news/a/rewriting-the-rules-of-ai-targeted-eu-ai-act-amendments-in-the-digital-omnibus-on-ai">IAPP, the Digital Omnibus on AI</a> · <a href="https://iapp.org/news/a/eu-member-states-finalize-digital-omnibus-negotiating-stance">IAPP, Council's Digital Omnibus negotiating position</a></p>
+    </article>
+  </section>
+
+  <section class="band news" id="newsletter">
+    <div class="wrap newsgrid">
+      <div>
+        <h2>Privacy, Practically</h2>
+        <p>A five-minute LinkedIn newsletter, every two weeks: one GDPR or EU AI Act development, why it matters, and three things a privacy team would do about it.</p>
+      </div>
+      <div class="issues">
+        <div class="iss"><span>Issue 1</span>Can an AI model forget you?</div>
+        <div class="iss"><span>Issue 2</span>Using AI to screen CVs: the five DPIA questions you can't skip</div>
+        <div class="iss"><span>Issue 3</span>What the AI Act means for companies that buy AI tools</div>
+        <a class="btn solid" href="https://www.linkedin.com/in/ankitaa-dhankkhar">Follow on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="experience">
+    <div class="wrap">
+      <h2>Experience and education</h2>
+      <div class="rows">
+        <div class="row"><div class="when">Current</div><div><h3>Erasmus Mundus Joint Master in Intellectual Property and Data Law</h3><p>TU Dresden and TalTech. Data law specialisation.</p></div></div>
+        <div class="row"><div class="when">Legal practice</div><div><h3>Legal Associate and Manager</h3><p>Office of Senior Advocate B. Singh, Chandigarh. Advisory, drafting and negotiation for more than 240 clients.</p></div></div>
+        <div class="row"><div class="when">Judicial research</div><div><h3>Law Researcher</h3><p>Chambers of Justice Rajbir Sehrawat, Punjab and Haryana High Court. Case research and briefs for the bench.</p></div></div>
+        <div class="row"><div class="when">Postgraduate</div><div><h3>Master of Laws (LLM)</h3><p>Graduated with distinction. Dissertation on privacy and the right to erasure in the Big Data era (Grade A).</p></div></div>
+        <div class="row"><div class="when">Undergraduate</div><div><h3>BA LLB (Honours)</h3><p>University Institute of Legal Studies, Panjab University. First class.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Get in touch</h2>
+        <p>I am glad to hear about internships, traineeships, fellowships and research collaborations in data protection and AI governance.</p>
+        <p class="addr">ankitaadhankkhar@gmail.com</p>
+      </div>
+      <div class="btns">
+        <button class="btn solid" id="copy" type="button">Copy email</button>
+        <a class="btn" href="https://www.linkedin.com/in/ankitaa-dhankkhar">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Ankitaa Dhankkhar</div></footer>
+
+<script>
+{
+  const s = document.getElementById('scene');
+  const gold = '#d6b26a', teal = '#8ccdd4';
+  const traces = [
+    [[0,60],[140,60],[175,95],[330,95]], [[0,140],[90,140],[125,175],[250,175],[285,140],[420,140]],
+    [[0,240],[170,240],[205,205],[360,205]], [[0,310],[110,310],[145,280],[290,280]],
+    [[1200,70],[1080,70],[1045,105],[930,105]], [[1200,250],[1100,250],[1065,285],[950,285]]
+  ];
+  let h = '';
+  for (const t of traces) {
+    h += `<polyline points="${t.map(p => p.join(',')).join(' ')}" fill="none" stroke="${teal}" stroke-opacity=".22" stroke-width="1.6"/>`;
+    const e = t[t.length - 1];
+    h += `<circle cx="${e[0]}" cy="${e[1]}" r="4" fill="none" stroke="${teal}" stroke-opacity=".4" stroke-width="1.6"/>`;
+  }
+  const cx = 600, top = 40, base = 300, bl = cx - 170, br = cx + 170, by = 85, py = 205, pw = 78;
+  h += `<g stroke="${gold}" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".9">
+    <line x1="${cx}" y1="${top}" x2="${cx}" y2="${base}"/>
+    <circle cx="${cx}" cy="${top}" r="9"/>
+  </g>
+  <rect x="${cx - 90}" y="${base}" width="180" height="9" rx="3" fill="${gold}" opacity=".9"/>
+  <g id="beam">
+  <g stroke="${gold}" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".9">
+    <line x1="${bl}" y1="${by}" x2="${br}" y2="${by}"/>
+    ${[bl, br].map(p => `<line x1="${p}" y1="${by}" x2="${p - pw}" y2="${py}" stroke-width="1.6"/><line x1="${p}" y1="${by}" x2="${p + pw}" y2="${py}" stroke-width="1.6"/><path d="M${p - pw} ${py} A${pw} 26 0 0 0 ${p + pw} ${py} Z"/>`).join('')}
+  </g>
+  ${[bl, br].map(p => `<circle cx="${p}" cy="${by}" r="4.5" fill="${gold}"/>`).join('')}
+  <g stroke="${teal}" stroke-width="2.6" fill="none" stroke-linecap="round">
+    <path d="M${bl - 20} ${py - 52} v-16 a20 20 0 0 1 40 0 v16"/>
+    <rect x="${bl - 32}" y="${py - 54}" width="64" height="46" rx="6"/>
+    <line x1="${bl}" y1="${py - 30}" x2="${bl}" y2="${py - 18}"/>
+    <rect x="${br - 28}" y="${py - 64}" width="56" height="56" rx="5"/>
+    ${[-14, 0, 14].map(o => `<line x1="${br + o}" y1="${py - 76}" x2="${br + o}" y2="${py - 64}" stroke-width="1.6"/><line x1="${br - 40}" y1="${py - 36 + o}" x2="${br - 28}" y2="${py - 36 + o}" stroke-width="1.6"/><line x1="${br + 28}" y1="${py - 36 + o}" x2="${br + 40}" y2="${py - 36 + o}" stroke-width="1.6"/>`).join('')}
+  </g>
+  <circle cx="${bl}" cy="${py - 34}" r="5" fill="${teal}"/>
+  <text x="${br}" y="${py - 29}" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="20" fill="${teal}">AI</text>
+  </g>`;
+  s.innerHTML = h;
+
+
+  const qs = [
+    { q: 'Was the person\'s data used to train the model?', yes: 1, no: 'r0' },
+    { q: 'Could their personal data be extracted from the model, directly or by prompting it?', yes: 2, no: 'r1' },
+    { q: 'Can the developer retrain or replace the model within a reasonable time?', yes: 'r2', no: 'r3' }
+  ];
+  const rs = {
+    r0: ['Erasure stops at the data you hold', 'The model was not trained on this person\'s data, so the request covers the data the organisation stores, not the model.'],
+    r1: ['The model may count as anonymous', 'If extraction is very unlikely, regulators may treat the model as anonymous (the EDPB assesses this case by case). Erase the training data and document why the model itself is out of scope.'],
+    r2: ['Erase at the source and retrain', 'Remove the data from training sets, suppress outputs in the meantime, and make sure the next model version is trained without it. Record every step.'],
+    r3: ['Suppress now, document, plan for later', 'Filter outputs promptly and be clear that this is suppression, not erasure. Record why retraining is not yet feasible and commit to removing the data in the next training cycle.']
+  };
+  const box = document.getElementById('qbox');
+  const esc = t => t.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const show = k => {
+    if (typeof k === 'number') {
+      const it = qs[k];
+      box.innerHTML = `<div class="step">Question ${k + 1} of 3</div><p class="q">${esc(it.q)}</p><div class="opts"><button class="opt" type="button" data-n="${it.yes}">Yes</button><button class="opt" type="button" data-n="${it.no}">No</button></div>`;
+    } else {
+      const [t, p] = rs[k];
+      box.innerHTML = `<div class="res"><div class="step">Outcome</div><h3>${esc(t)}</h3><p>${esc(p)}</p></div>`;
+    }
+  };
+  box.addEventListener('click', e => {
+    const b = e.target.closest('.opt'); if (!b) return;
+    const n = b.dataset.n; show(/^\d+$/.test(n) ? Number(n) : n);
+  });
+  document.getElementById('qreset').addEventListener('click', () => show(0));
+  show(0);
+
+  const btn = document.getElementById('copy');
+  btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText('ankitaadhankkhar@gmail.com'); btn.textContent = 'Copied'; }
+    catch (e) { btn.textContent = 'Copy failed: see address'; }
+    setTimeout(() => { btn.textContent = 'Copy email'; }, 2200);
+  });
+}
+</script>
+</body>
+</html>
